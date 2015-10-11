@@ -2,18 +2,11 @@
 		.module('todoApp')
 		.controller('ExportToFileController', ExportToFileController);
 
-	ExportToFileController.$inject = ['$scope', 'Projects', '$ionicModal', '$ionicSideMenuDelegate', '$cordovaFile'];
+	ExportToFileController.$inject = ['$scope', 'Projects', '$ionicSideMenuDelegate', '$cordovaFile', '$ionicPlatform'];
 
-	function ExportToFileController($scope, Projects, $ionicModal, $ionicSideMenuDelegate, $cordovaFile) {
+	function ExportToFileController($scope, Projects, $ionicSideMenuDelegate, $cordovaFile, $ionicPlatform) {
 		//initialize
 		$scope.all = Projects.all();
-
-		// Create our modal
-		$ionicModal.fromTemplateUrl('templates/new-task.html', function(modal) {
-			$scope.taskModal = modal;
-		}, {
-			scope: $scope
-		});
 
 		/**
 		 * Method will open a modal for new task
@@ -21,14 +14,18 @@
 		$scope.exportToFile = function() {
 			//Clear the ngModel in the modal first
 			console.log("ExportToFileController.exportToFile()");
+			var data = JSON.stringify($scope.all);
+			var filePath = 'file.txt';
 
-			$cordovaFile.writeFile('file.txt', data, {
-				'append': false
-			}).then(function(result) {
-				// Success!
-			}, function(err) {
-				// An error occured. Show a message to the user
+			$ionicPlatform.ready(function() {
+				$cordovaFile.writeFile(cordova.file.externalRootDirectory + 'Surveyor', 'temp.html', 'text to write', true)
+					.then(function(success) {
+						alert('success ' + success.toString());
+					}, function(error) {
+						alert('error ' + error.toString());
+					});
 			});
+
 		};
 
 

@@ -20,11 +20,17 @@ The default Ionic templates are downloaded from git when you start a new project
 
 		git --version
 
-###Section 1.2: Install NodeJS
+###Section 1.2.a: If Node already installed then Just Update
 
 In this section we will be installign NodeJs is you do not have it already installed.  To check to see if you have node install or not, open a command prompt or terminal and run the following command:    
 		
-		$ node -v 
+		$ npm update npm -g
+	
+1. Check the new version number:
+
+		$ node -v
+
+###Section 1.2.b: Fresh NodeJS Install
 
 1. If you do not have nodejs installed, download it from [http://nodejs.org](http://nodejs.org)
 1. After the installer downloads, run it and keep all of the defaults
@@ -47,14 +53,31 @@ We are going to turn off the npm spinner and turn on http messages so that you w
 
 		$ npm config ls
 
-###Section 1.4: Installing Ionic
+###Section 1.4.a: Installing Ionic
 	
 1. Install the following npm packages
 
 		$ npm install -g ionic gulp bower  
-   
-1. Verify the installs by running the following commands
 
+###Section 1.4.b: Installing Ionic Icons (used by this project)
+	
+1. Install the following npm packages
+
+		$ npm install -g ionic-contrib-icon  
+		$ npm install ionic-contrib-icon 
+   
+###Section 1.4.b: Installing Cordova (Ubuntu)
+	
+1. Install the following npm packages
+
+		$ sudo apt-add-repository ppa:cordova-ubuntu/ppa
+		$ sudo apt-get update
+		$ sudo apt-get install cordova-cli
+		$ npm install -g cordova
+		
+To build an application for the Ubuntu platform, the following extra packages are required
+
+		$ sudo apt-get install cmake debhelper libx11-dev libicu-dev pkg-config qtbase5-dev qtchooser qtdeclarative5-dev qtfeedback5-dev qtlocation5-dev qtmultimedia5-dev qtpim5-dev qtsensors5-dev qtsystems5-dev
 
 ###Section 1.5: Installing a Text Editor
 
@@ -73,12 +96,13 @@ In this section we will be creating the initial ionic project.
 1. Navigate where you normally keep your source code.  I keep mine at c:\projects
 
 		
-		$ mkdir c:\projects
-		$ cd c:\projects 
+		$ mkdir c:\git
+		$ cd c:\git 
 
 1. Run the ionic start command to create your project
 
 		$ ionic start todoApp https://github.com/Ionic-AZ/todoAppTemplate
+		$ ionic start todoApp1 https://github.com/tucsonSun/iconic-examples-todo-v1
 
 1. You should see output like this screenshot if everything is working correctly.    
 		![Ionic Start Output](images/IonicStart.png)

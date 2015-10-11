@@ -101,7 +101,6 @@ In this section we will be creating the initial ionic project.
 
 1. Run the ionic start command to create your project
 
-		$ ionic start todoApp https://github.com/Ionic-AZ/todoAppTemplate
 		$ ionic start todoApp1 https://github.com/tucsonSun/iconic-examples-todo-v1
 
 1. You should see output like this screenshot if everything is working correctly.    

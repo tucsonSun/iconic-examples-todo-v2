@@ -98,7 +98,7 @@ You can use any text editor to developer your ionic project.  I personally am us
 You can use several andriod emulators. But recommonded don't use the iconic provided emulator. 
 
 * GenyMotion(free for peronsal) - [https://www.genymotion.com](https://wwww.genymotion.com)
-
+* Android SDK (REQUIRED) - [https://developer.android.com](https://developer.android.com)
 
 ###Section 1.7a: Installing Ionic Android and iOS Emulation support
 
@@ -108,11 +108,8 @@ You can use several andriod emulators. But recommonded don't use the iconic prov
 
 ###Section 1.7b: Installing Ionic Android and iOS Emulation support
 
-	$ ionic build andriod
-	$ ionic emulate andriod
-
-	$ ionic build ios
-	$ ionic emulate ios
+	$ ionic run android
+	$ ionic run ios
 
 ##------------------------------------------------------
 

@@ -1,0 +1,29 @@
+<ion-view view-title="<b>Projects</b>">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon ion-plus" ng-click="addProjectWithModal()">Add</button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <ion-item ng-repeat="project in projects">
+            {{project.title}}
+        </ion-item>
+
+
+            <!-- List to thru projects -->
+            <ion-list show-delete="false" can-swipe="true">
+                <ion-item ng-repeat="project in projects">
+                    <div class="padding">
+                        <div class="bar bar-header bar-positive">
+                            <div class="buttons">
+                                <button class="button button-dark ion-edit" ng-click="selectProject(project, $index)">&nbsp;&nbsp;Edit</button>
+                            </div>
+                            <button class="button button-icon" ng-click="selectProject(project, $index)"><i class="icon ion-compose"></i></button>
+                            <h1 class="title">{{project.title}}</h1>
+                            <div class="buttons" ng-click="deleteActiveProject(project, $index)">
+                                <button class="button button-assertive ion-close-round"></button>
+                            </div>
+                        </div>
+                    </div>
+                </ion-item>
+            </ion-list>
+    </ion-content>
+</ion-view>

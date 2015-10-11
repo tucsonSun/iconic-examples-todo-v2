@@ -1,0 +1,10 @@
+<ion-view view-title="<b>{{activeProject.title}} - Tasks</b>">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon ion-plus" ng-click="newTask()">Add</button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <ion-item ng-repeat="task in activeProject.tasks">
+            {{task.title}}
+        </ion-item>
+    </ion-content>
+</ion-view>

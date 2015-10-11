@@ -100,8 +100,15 @@ You can use several andriod emulators. But recommonded don't use the iconic prov
 * GenyMotion(free for peronsal) - [https://www.genymotion.com](https://wwww.genymotion.com)
 
 
+###Section 1.7: Installing Ionic Android and iOS Emulation support
+
+	$ ionic platform add android
+	$ ionic platform add ios
 
 
+You can use several andriod emulators. But recommonded don't use the iconic provided emulator. 
+
+* GenyMotion(free for peronsal) - [https://www.genymotion.com](https://wwww.genymotion.com)
 
 ##------------------------------------------------------
 

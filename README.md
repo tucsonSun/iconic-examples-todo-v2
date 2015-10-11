@@ -93,7 +93,7 @@ You can use any text editor to developer your ionic project.  I personally am us
 * Webstorm (paid)  - [https://www.jetbrains.com/webstorm](https://www.jetbrains.com/webstorm)
 * Sublime Text (paid) - [http://www.sublimetext.com](http://www.sublimetext.com) 
 
-###Section 1.6: Installing Andrio Emulator Genymotion
+###Section 1.6: Installing Andriod Emulator Genymotion
 
 You can use several andriod emulators. But recommonded don't use the iconic provided emulator. 
 

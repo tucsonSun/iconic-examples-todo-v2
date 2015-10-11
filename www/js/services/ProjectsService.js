@@ -45,9 +45,9 @@
 
 		function deleteProject(project) {
 			console.log("Projects.deleteProject");
-			console.log(globalProjects);
-			console.log(project);
-			var index = globalProjects.indexOf(project);
+			var index = getIndexOfProject(project);
+
+			//var index = globalProjects.indexOf(project);
 			globalProjects.splice(index, 1);
 			save(globalProjects);
 
@@ -78,7 +78,7 @@
 
 		function getLastProjectInList() {
 			console.log("Projects.getLastProjectInList");
-			var projects = this.all();
+			var projects = all();
 
 			if (projects && projects.length > 0) {
 				var lastIndex = projects.length - 1;
@@ -90,7 +90,7 @@
 
 		function getIndexOfProject(aProject) {
 			console.log("Projects.getIndexOfProject");
-			var projects = this.all();
+			var projects = all();
 			if (aProject && projects && projects.length > 0) {
 				for (i = 0; i < projects.length; i++) {
 					var tempProj = projects[i];

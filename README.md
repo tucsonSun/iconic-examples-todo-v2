@@ -39,15 +39,15 @@ In this section we will be installign NodeJs is you do not have it already insta
 		$ node -v
 
 
-###Section 1.3: Configure Npm
+###Section 1.3: Configure Npm [SKIP THIS.....]
 
 We are going to turn off the npm spinner and turn on http messages so that you will be able to see that npm is actually doing something 
 
 1. Open a Command Prompt or Terminal
 1. Run the following commands:
 
-		$ npm config set spin false
-		$ npm config set loglevel http
+		$ npm config set spin false [SKIP THIS.....]
+		$ npm config set loglevel http [SKIP THIS.....]
 
 1. Verify that the settings are set
 

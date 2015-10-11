@@ -118,9 +118,8 @@ In this section we will be creating the initial ionic project.
 		![Ionic Serve Output](images/IonicServeAfterProjectCreate.png)
 
 
-##Section 3: Add the Task View
+##------------------------------------------------------
 
-##Section 3: Add the Task View
 
 
  

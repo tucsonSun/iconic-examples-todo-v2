@@ -33,6 +33,15 @@ angular.module('todoApp', ['ionic', 'ionic.contrib.icon'])
                     }
                 }
             })
+          .state('app.exportToFile', {
+                url: "/exportToFile",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/exportToFile.html",
+                        controller: 'ExportToFileController',
+                    }
+                }
+            })
             .state('app.tasks', {
                 url: "/tasks",
                 views: {

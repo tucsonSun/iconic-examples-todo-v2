@@ -14,44 +14,14 @@
     <!-- Left Nav menu -->
     <ion-side-menu side="left">
         <ion-header-bar class="bar-stable">
-            <h1 class="title">Projects</h1>
+            <h1 class="title">Settings</h1>
             <button class="button button-icon ion-plus" ng-click="addProjectWithModal()">Add</button>
         </ion-header-bar>
         <ion-content>
             <!-- List to thru projects -->
             <ion-list show-delete="false" can-swipe="true">
-                <!--             <ion-footer-bar align-title="left" class="bar-positive">
-                <div class="buttons">
-                    <button class="button ion-edit">&nbsp;&nbsp;Edit Project</button>
-                </div>
-                <h1 class="title">&nbsp;</h1>
-                <div class="buttons" ng-click="deleteActiveProject()">
-                    <button class="button ion-close-round">&nbsp;&nbsp;Delete Project</button>
-                </div>
-            </ion-footer-bar> -->
-                <ion-item ng-repeat="project in projects">
-                    <div class="padding">
-                        <div class="bar bar-header bar-positive">
-                            <div class="buttons">
-                                <button class="button button-dark ion-edit" ng-click="selectProject(project, $index)">&nbsp;&nbsp;Edit</button>
-                            </div>
-                            <h1 class="title">{{project.title}}</h1>
-                            <div class="buttons" ng-click="deleteActiveProject(project, $index)">
-                                <button class="button button-assertive ion-close-round"></button>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!--                     <ion-button class="button-assertive icon ion-trash-a" ng-click="deleteProject(project, $index)"></ion-button>
-
-                    <ion-item>
-                        <button class="button button-icon ion-eye" ng-click="selectProject(project, $index)">{{project.title}}</button>
-                       
-                        {{project.title}}
-                        <ion-button class="button-assertive icon ion-trash-a" ng-click="deleteProject(project, $index)"></ion-button>
-                    </ion-item>
- -->
+                <ion-item menu-close href="#/app/exportToFile">
+                    Export to XML
                 </ion-item>
                 <ion-item menu-close href="#/app/about">
                     About

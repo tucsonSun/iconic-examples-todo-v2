@@ -16,7 +16,9 @@
 			getIndexOfProject: getIndexOfProject,
 			setActiveProject: setActiveProject,
 			getActiveProject: getActiveProject,
-			addTaskToProject: addTaskToProject
+			addTaskToProject: addTaskToProject,
+			getIndexOfTask: getIndexOfTask,
+			deleteTask: deleteTask
 		};
 
 		var globalProjects = [];
@@ -139,5 +141,27 @@
 			return -1;
 		}
 
+		function getIndexOfTask(project, task) {
+			if (project && project.tasks && project.tasks.length > 0) {
+				var tasks = project.tasks;
+				for (i = 0; i < tasks.length; i++) {
+					var tempTask = tasks[i];
+					if (tempTask.id === task.id)
+						return i;
+				}
+			}
+			return null;
+		}
+
+
+		function deleteTask(project, task) {
+			console.log("Projects.deleteTask");
+			var index = getIndexOfTask(project, task);
+
+			if (index) {
+				project.tasks.splice(index, 1);
+				save(globalProjects);
+			}
+		}
 
 	}

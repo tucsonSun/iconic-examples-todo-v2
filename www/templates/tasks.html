@@ -3,8 +3,19 @@
         <button class="button button-icon ion-plus" ng-click="newTask()">Add</button>
     </ion-nav-buttons>
     <ion-content class="padding">
-        <ion-item ng-repeat="task in activeProject.tasks">
+<!--         <ion-item ng-repeat="task in activeProject.tasks">
             {{task.title}}
-        </ion-item>
+        </ion-item> -->
+
+        <!-- List to thru projects -->
+        <ion-list show-delete="false" can-swipe="true">
+            <div ng-repeat="task in activeProject.tasks">
+                <ion-item ng-click="editTask(task)">
+                    {{task.title}}
+                    <!-- <ion-option-button class="button-light icon ion-edit" ng-click="selectProject(project)"></ion-option-button> -->
+                    <ion-option-button class="button-assertive icon ion-trash-a" ng-click="deleteTask(task)"></ion-option-button>
+                </ion-item>
+            </div>
+        </ion-list>
     </ion-content>
 </ion-view>

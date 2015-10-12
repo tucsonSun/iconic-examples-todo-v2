@@ -1,15 +1,23 @@
-<ion-view view-title="<b>Projects</b>">
+<ion-view view-title="Projects">
     <ion-nav-buttons side="right">
         <button class="button button-icon ion-plus" ng-click="addProjectWithModal()">Add</button>
     </ion-nav-buttons>
     <ion-content class="padding">
-        <ion-item ng-repeat="project in projects">
-            {{project.title}}
-        </ion-item>
+        <!-- List to thru projects -->
+        <ion-list show-delete="false" can-swipe="true">
+            <div ng-repeat="project in projects">
+                <ion-item ng-click="selectProject(project)">
+                    {{project.title}}
+                    <!-- <ion-option-button class="button-light icon ion-edit" ng-click="selectProject(project)"></ion-option-button> -->
+                    <ion-option-button class="button-assertive icon ion-trash-a" ng-click="deleteActiveProject(project)"></ion-option-button>
+                </ion-item>
+            </div>
+        </ion-list>
+
 
 
             <!-- List to thru projects -->
-            <ion-list show-delete="false" can-swipe="true">
+<!--             <ion-list show-delete="false" can-swipe="true">
                 <ion-item ng-repeat="project in projects">
                     <div class="padding">
                         <div class="bar bar-header bar-positive">
@@ -24,6 +32,6 @@
                         </div>
                     </div>
                 </ion-item>
-            </ion-list>
+            </ion-list> -->
     </ion-content>
 </ion-view>

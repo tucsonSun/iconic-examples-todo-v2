@@ -43,7 +43,7 @@
 				Projects.save($scope.projects);
 
 				//select the new project
-				$scope.selectProject(newProject);
+				Projects.setActiveProject(project);
 
 				// close the module
 				$scope.projectModal.hide();
@@ -58,9 +58,6 @@
 
 			//redirct to tasks list
 			$state.go('app.tasks');
-
-			//toggle menu on the left side
-			//$ionicSideMenuDelegate.toggleLeft();
 		};
 
 
@@ -68,7 +65,7 @@
 		/**
 		 * Method will delete the activeProject
 		 */
-		$scope.deleteActiveProject = function(project, index) {
+		$scope.deleteActiveProject = function(project) {
 			if (!project) {
 				console.log("unable to delete project ");
 				return;

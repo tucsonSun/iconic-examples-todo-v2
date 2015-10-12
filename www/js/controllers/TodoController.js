@@ -16,8 +16,8 @@
 		});
 
 		/**
-		* Method will open a modal for new task
-		*/
+		 * Method will open a modal for new task
+		 */
 		$scope.newTask = function() {
 			//Clear the ngModel in the modal first
 			$scope.task = {};
@@ -25,8 +25,8 @@
 		};
 
 		/**
-		* Method will close a modal for new task
-		*/
+		 * Method will close a modal for new task
+		 */
 		$scope.closeNewTask = function() {
 			$scope.taskModal.hide();
 		};
@@ -46,4 +46,24 @@
 			//modal hide
 			$scope.taskModal.hide();
 		};
+
+
+		/**
+		 * Method will edit the task
+		 */
+		$scope.editTask = function(task) {
+			//Clear the ngModel in the modal first
+			$scope.task = task;
+			$scope.taskModal.show();
+		};
+
+
+		/**
+		 * Method will delete the task
+		 */
+		$scope.deleteTask = function(task) {
+			console.log("Tasks.deleteTask");
+			Projects.deleteTask($scope.activeProject, task);
+		};
+
 	}

@@ -97,6 +97,7 @@ You can use any text editor to developer your ionic project.  I personally am us
 
 You can use several andriod emulators. But recommonded don't use the iconic provided emulator. 
 
+* GenyMotion Install Video - [https://egghead.io/lessons/angularjs-install-the-genymotion-android-emulator-for-ionic](https://egghead.io/lessons/angularjs-install-the-genymotion-android-emulator-for-ionic)
 * GenyMotion(free for peronsal) - [https://www.genymotion.com](https://wwww.genymotion.com)
 * Android SDK (REQUIRED) - [https://developer.android.com](https://developer.android.com)
 

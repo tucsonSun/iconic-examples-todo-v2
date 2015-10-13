@@ -7,6 +7,9 @@
 	function ToDoController($scope, Projects, $ionicModal, $ionicSideMenuDelegate) {
 		//initialize
 		$scope.activeProject = Projects.getActiveProject();
+		$scope.shouldShowDelete = false;
+		$scope.shouldShowReorder = false;
+
 
 		// Create our modal
 		$ionicModal.fromTemplateUrl('templates/new-task.html', function(modal) {
@@ -14,6 +17,15 @@
 		}, {
 			scope: $scope
 		});
+
+
+		$scope.taskModalTitle = function() {
+			if ($scope.task && $scope.task.title) {
+				return 'Edit Task';
+			}
+			else
+				return 'Add Task';
+		};
 
 		/**
 		 * Method will open a modal for new task
@@ -47,7 +59,6 @@
 			$scope.taskModal.hide();
 		};
 
-
 		/**
 		 * Method will edit the task
 		 */
@@ -59,11 +70,45 @@
 
 
 		/**
+		 * Method will email the task
+		 */
+		$scope.emailTask = function(task) {
+			console.log("Tasks.emailTask");
+		};
+
+
+		/**
 		 * Method will delete the task
 		 */
 		$scope.deleteTask = function(task) {
 			console.log("Tasks.deleteTask");
 			Projects.deleteTask($scope.activeProject, task);
 		};
+
+
+		/**
+		 * Method will reorder the task
+		 */
+		$scope.reorderTask = function(task, $fromIndex, $toIndex) {
+			console.log("Tasks.reorderTask");
+		};
+
+		/**
+		 * Method will make the task completed
+		 */
+		$scope.markTaskCompleted = function(task) {
+			console.log("Tasks.markTaskCompleted");
+			Projects.makeTaskComplete(task);
+		};
+
+
+		/**
+		 * Method will make the task not-completed
+		 */
+		$scope.markTaskNotCompleted = function(task) {
+			console.log("Tasks.markTaskNotCompleted");
+			Projects.markTaskNotCompleted(task);
+		};
+
 
 	}

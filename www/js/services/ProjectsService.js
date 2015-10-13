@@ -117,9 +117,8 @@
 		function addTaskToProject(project, task) {
 			var newId = "id" + Math.random().toString(16).slice(2);
 			var index = this.getIndexOfProject(project);
-			if (!task.id) {
-				task.id = newId;
-			}
+			task.id = newId;
+			task.isCompleted = false;
 
 			globalProjects[index].tasks.push(task);
 
@@ -164,4 +163,19 @@
 			}
 		}
 
+		function markTaskCompleted(task) {
+			console.log("Projects.makeTaskComplete");
+			if (task) {
+				task.isCompleted = true;
+				save(globalProjects);
+			}
+		}
+
+		function markTaskNotCompleted(task) {
+			console.log("Projects.markTaskNotCompleted");
+			if (task) {
+				task.isCompleted = false;
+				save(globalProjects);
+			}
+		}
 	}

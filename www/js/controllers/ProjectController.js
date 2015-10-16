@@ -23,12 +23,19 @@
 			$scope.projectModal.show();
 		};
 
-		$scope.editProjectWithModal = function(project) {
+		$scope.projectModalTitle = function() {
+			if ($scope.project && $scope.project.title) {
+				return 'Edit Project';
+			}
+			else
+				return 'Add Project';
+		};
+
+		$scope.editProject = function(project) {
 			//Asign the ngModel in the modal first
 			$scope.project = project;
 			$scope.projectModal.show();
 		};
-
 
 		$scope.closeNewProject = function() {
 			$scope.projectModal.hide();

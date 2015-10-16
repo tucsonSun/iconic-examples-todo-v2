@@ -10,7 +10,6 @@
 		$scope.shouldShowDelete = false;
 		$scope.shouldShowReorder = false;
 
-
 		// Create our modal
 		$ionicModal.fromTemplateUrl('templates/new-task.html', function(modal) {
 			$scope.taskModal = modal;
@@ -111,4 +110,32 @@
 		};
 
 
+    /**
+     * Method will toggleShowDelete
+     */
+    $scope.toggleShowDelete = function() {
+      console.log("Tasks.toggleShowDelete");
+      $scope.shouldShowDelete = !$scope.shouldShowDelete;
+      $scope.shouldShowReorder = false;
+    };
+
+    /**
+     * Method will toggleShowReorder
+     */
+    $scope.toggleShowReorder = function() {
+      console.log("Tasks.toggleShowReorder");
+      $scope.shouldShowReorder = !$scope.shouldShowReorder;
+      $scope.shouldShowDelete = false;
+    };
+
+
+    /**
+     * Method will reorderItem
+     */
+    $scope.reorderItem = function(item, fromIndex, toIndex) {
+      $scope.activeProject.tasks.splice(fromIndex, 1);
+      $scope.activeProject.tasks.splice(toIndex, 0, item);
+    };
+
 	}
+

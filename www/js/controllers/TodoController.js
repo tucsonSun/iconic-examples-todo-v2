@@ -133,8 +133,7 @@
      * Method will reorderTask
      */
     $scope.reorderTask = function(aTask, fromIndex, toIndex) {
-      $scope.activeProject.tasks.splice(fromIndex, 1);
-      $scope.activeProject.tasks.splice(toIndex, 0, aTask);
+      Projects.reorderArray($scope.activeProject.tasks, aTask, fromIndex, toIndex);
     };
 
 

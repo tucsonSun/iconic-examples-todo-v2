@@ -18,7 +18,8 @@
 			getActiveProject: getActiveProject,
 			addTaskToProject: addTaskToProject,
 			getIndexOfTask: getIndexOfTask,
-			deleteTask: deleteTask
+			deleteTask: deleteTask,
+			reorderArray: reorderArray
 		};
 
 		var globalProjects = [];
@@ -56,7 +57,7 @@
 			var lastActiveIndex = getLastActiveIndex();
 
 			if (index == lastActiveIndex) {
-				setLastActiveIndex(globalProjects.length-1);
+				setLastActiveIndex(globalProjects.length - 1);
 			}
 		}
 
@@ -177,5 +178,11 @@
 				task.isCompleted = false;
 				save(globalProjects);
 			}
+		}
+
+		function reorderArray(array, item, fromIndex, toIndex) {
+			array.splice(fromIndex, 1);
+			array.splice(toIndex, 0, item);
+			save(globalProjects);
 		}
 	}

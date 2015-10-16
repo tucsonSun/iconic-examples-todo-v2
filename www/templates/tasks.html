@@ -1,14 +1,12 @@
 <ion-view view-title="{{activeProject.title}} - Tasks">
-<ion-nav-buttons side="right">
-    <button class="button button-icon ion-plus" ng-click="newTask()">Add</button>
-    <button class="button" ng-click="toggleShowReorder()">Reorder</button>
-    <button class="button button-icon icon ion-ios-minus-outline" style="color:red;" ng-click="toggleShowDelete()"></button>
-    <!-- <button class="button button-icon icon ion-minus-circled" ng-click="toggleShowDelete()"></button> -->
-</ion-nav-buttons>
-
-
+    <ion-nav-buttons side="right">
+        <button class="button button-icon ion-plus" ng-click="newTask()">Add</button>
+        <button class="button" ng-click="toggleShowReorder()">Reorder</button>
+        <button class="button button-icon icon ion-ios-minus-outline" style="color:red;" ng-click="toggleShowDelete()"></button>
+        <!-- <button class="button button-icon icon ion-minus-circled" ng-click="toggleShowDelete()"></button> -->
+    </ion-nav-buttons>
     <ion-content class="padding">
-        <!-- List to thru projects -->
+        <!-- List to thru tasks -->
         <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="true">
             <ion-item ng-repeat="task in activeProject.tasks" class="item-thumbnail-left">
                 <img ng-src="{{task.img}}">
@@ -27,4 +25,3 @@
         </ion-list>
     </ion-content>
 </ion-view>
-

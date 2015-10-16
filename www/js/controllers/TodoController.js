@@ -109,7 +109,6 @@
 			Projects.markTaskNotCompleted(task);
 		};
 
-
     /**
      * Method will toggleShowDelete
      */

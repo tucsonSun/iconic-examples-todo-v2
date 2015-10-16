@@ -7,6 +7,8 @@
 	function ProjectController($scope, $state, Projects, $ionicModal, $ionicSideMenuDelegate) {
 		// Load or initialize projects
 		$scope.projects = Projects.all();
+		$scope.shouldShowDelete = false;
+		$scope.shouldShowReorder = false;
 
 		// Create our modal
 		$ionicModal.fromTemplateUrl('templates/new-project.html', function(modal) {
@@ -60,12 +62,10 @@
 			$state.go('app.tasks');
 		};
 
-
-
 		/**
 		 * Method will delete the activeProject
 		 */
-		$scope.deleteActiveProject = function(project) {
+		$scope.deleteProject = function(project) {
 			if (!project) {
 				console.log("unable to delete project ");
 				return;
@@ -83,5 +83,31 @@
 			}
 			//update projects list
 			$scope.projects = Projects.all();
+		};
+
+		/**
+		 * Method will toggleShowDelete
+		 */
+		$scope.toggleShowDelete = function() {
+			console.log("Projects.toggleShowDelete");
+			$scope.shouldShowDelete = !$scope.shouldShowDelete;
+			$scope.shouldShowReorder = false;
+		};
+
+		/**
+		 * Method will toggleShowReorder
+		 */
+		$scope.toggleShowReorder = function() {
+			console.log("Projects.toggleShowReorder");
+			$scope.shouldShowReorder = !$scope.shouldShowReorder;
+			$scope.shouldShowDelete = false;
+		};
+
+
+		/**
+		 * Method will reorderTask
+		 */
+		$scope.reorderProject = function(aProject, fromIndex, toIndex) {
+			Projects.reorderArray($scope.projects, aProject, fromIndex, toIndex);
 		};
 	}

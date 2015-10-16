@@ -130,12 +130,22 @@
 
 
     /**
+     * Method will reorderTask
+     */
+    $scope.reorderTask = function(aTask, fromIndex, toIndex) {
+      $scope.activeProject.tasks.splice(fromIndex, 1);
+      $scope.activeProject.tasks.splice(toIndex, 0, aTask);
+    };
+
+
+    /**
      * Method will reorderItem
      */
-    $scope.reorderItem = function(item, fromIndex, toIndex) {
-      $scope.activeProject.tasks.splice(fromIndex, 1);
-      $scope.activeProject.tasks.splice(toIndex, 0, item);
+    $scope.emailTask = function(task) {
+      console.log("Tasks.emailTask");
+
     };
+
 
 	}
 

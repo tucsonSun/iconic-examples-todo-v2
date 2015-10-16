@@ -10,19 +10,19 @@
     <ion-content class="padding">
         <!-- List to thru projects -->
         <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="true">
-            <ion-item ng-repeat="item in activeProject.tasks" class="item-thumbnail-left">
-                <img ng-src="{{item.img}}">
-                <h2>{{item.title}}</h2>
-                <p>{{item.isCompleted}}</p>
-                <p>{{item.description}}</p>
-                <ion-option-button class="button-positive" ng-click="share(item)">
-                    Share
+            <ion-item ng-repeat="task in activeProject.tasks" class="item-thumbnail-left">
+                <img ng-src="{{task.img}}">
+                <h2>{{task.title}}</h2>
+                <p>{{task.isCompleted}}</p>
+                <p>{{task.description}}</p>
+                <ion-option-button class="button-positive" ng-click="emailTask(task)">
+                    Email
                 </ion-option-button>
-                <ion-option-button class="button-info" ng-click="edit(item)">
+                <ion-option-button class="button-info" ng-click="editTask(task)">
                     Edit
                 </ion-option-button>
-                <ion-delete-button class="ion-minus-circled" ng-click="deleteTask(item)"></ion-delete-button>
-                <ion-reorder-button class="ion-navicon" on-reorder="reorderItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+                <ion-delete-button class="ion-minus-circled" ng-click="deleteTask(task)"></ion-delete-button>
+                <ion-reorder-button class="ion-navicon" on-reorder="reorderTask(task, $fromIndex, $toIndex)"></ion-reorder-button>
             </ion-item>
         </ion-list>
     </ion-content>

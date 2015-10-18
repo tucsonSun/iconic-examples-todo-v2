@@ -9,17 +9,18 @@
 			all: all,
 			save: save,
 			newProject: newProject,
+			deleteProject: deleteProject,
+			newTask: newTask,
+			deleteTask: deleteTask,
 			getLastActiveIndex: getLastActiveIndex,
 			setLastActiveIndex: setLastActiveIndex,
-			deleteProject: deleteProject,
 			getLastProjectInList: getLastProjectInList,
 			getIndexOfProject: getIndexOfProject,
 			setActiveProject: setActiveProject,
 			getActiveProject: getActiveProject,
-			addTaskToProject: addTaskToProject,
 			getIndexOfTask: getIndexOfTask,
-			deleteTask: deleteTask,
-			reorderArray: reorderArray
+			reorderArray: reorderArray,
+			toggleTaskIsComplete: toggleTaskIsComplete
 		};
 
 		var globalProjects = [];
@@ -115,7 +116,7 @@
 			window.localStorage['lastActiveProject'] = index;
 		}
 
-		function addTaskToProject(project, task) {
+		function newTask(project, task) {
 			var newId = "id" + Math.random().toString(16).slice(2);
 			var index = this.getIndexOfProject(project);
 			task.id = newId;
@@ -164,18 +165,10 @@
 			}
 		}
 
-		function markTaskCompleted(task) {
-			console.log("Projects.makeTaskComplete");
+		function toggleTaskIsComplete(task) {
+			console.log("Projects.toggleTaskIsComplete");
 			if (task) {
-				task.isCompleted = true;
-				save(globalProjects);
-			}
-		}
-
-		function markTaskNotCompleted(task) {
-			console.log("Projects.markTaskNotCompleted");
-			if (task) {
-				task.isCompleted = false;
+				task.isCompleted = !task.isCompleted;
 				save(globalProjects);
 			}
 		}

@@ -21,8 +21,7 @@
 		$scope.taskModalTitle = function() {
 			if ($scope.task && $scope.task.title) {
 				return 'Edit Task';
-			}
-			else
+			} else
 				return 'Add Task';
 		};
 
@@ -42,14 +41,14 @@
 			$scope.taskModal.hide();
 		};
 
-		$scope.createTask = function(task) {
-			console.log('TodoController.createTask');
+		$scope.newTask = function(task) {
+			console.log('TodoController.newTask');
 			if (!Projects.getActiveProject() || !task) {
 				return;
 			}
 
 			//push new task into project
-			Projects.addTaskToProject($scope.activeProject, task);
+			Projects.newTask($scope.activeProject, task);
 
 			//update the activeProject reference
 			$scope.activeProject = Projects.getActiveProject();
@@ -66,15 +65,6 @@
 			$scope.task = task;
 			$scope.taskModal.show();
 		};
-
-
-		/**
-		 * Method will email the task
-		 */
-		$scope.emailTask = function(task) {
-			console.log("Tasks.emailTask");
-		};
-
 
 		/**
 		 * Method will delete the task
@@ -95,55 +85,55 @@
 		/**
 		 * Method will make the task completed
 		 */
-		$scope.markTaskCompleted = function(task) {
-			console.log("Tasks.markTaskCompleted");
-			Projects.makeTaskComplete(task);
+		$scope.isCompletedLabel = function(task) {
+			if (task && task.title && task.isCompleted) {
+				return "Complete";
+			} else {
+				return "Is Complete?";
+			}
+		};
+
+		/**
+		 * Method will toggle isCompleted flag
+		 */
+		$scope.toggleTaskIsComplete = function(task) {
+			Projects.toggleTaskIsComplete(task);
 		};
 
 
 		/**
-		 * Method will make the task not-completed
+		 * Method will toggleShowDelete
 		 */
-		$scope.markTaskNotCompleted = function(task) {
-			console.log("Tasks.markTaskNotCompleted");
-			Projects.markTaskNotCompleted(task);
+		$scope.toggleShowDelete = function() {
+			console.log("Tasks.toggleShowDelete");
+			$scope.shouldShowDelete = !$scope.shouldShowDelete;
+			$scope.shouldShowReorder = false;
 		};
 
-    /**
-     * Method will toggleShowDelete
-     */
-    $scope.toggleShowDelete = function() {
-      console.log("Tasks.toggleShowDelete");
-      $scope.shouldShowDelete = !$scope.shouldShowDelete;
-      $scope.shouldShowReorder = false;
-    };
-
-    /**
-     * Method will toggleShowReorder
-     */
-    $scope.toggleShowReorder = function() {
-      console.log("Tasks.toggleShowReorder");
-      $scope.shouldShowReorder = !$scope.shouldShowReorder;
-      $scope.shouldShowDelete = false;
-    };
+		/**
+		 * Method will toggleShowReorder
+		 */
+		$scope.toggleShowReorder = function() {
+			console.log("Tasks.toggleShowReorder");
+			$scope.shouldShowReorder = !$scope.shouldShowReorder;
+			$scope.shouldShowDelete = false;
+		};
 
 
-    /**
-     * Method will reorderTask
-     */
-    $scope.reorderTask = function(aTask, fromIndex, toIndex) {
-      Projects.reorderArray($scope.activeProject.tasks, aTask, fromIndex, toIndex);
-    };
+		/**
+		 * Method will reorderTask
+		 */
+		$scope.reorderTask = function(aTask, fromIndex, toIndex) {
+			Projects.reorderArray($scope.activeProject.tasks, aTask, fromIndex, toIndex);
+		};
 
 
-    /**
-     * Method will reorderItem
-     */
-    $scope.emailTask = function(task) {
-      console.log("Tasks.emailTask");
+		/**
+		 * Method will reorderItem
+		 */
+		$scope.emailTask = function(task) {
+			console.log("Tasks.emailTask");
 
-    };
-
+		};
 
 	}
-

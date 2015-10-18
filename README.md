@@ -108,17 +108,7 @@ You can use several andriod emulators. But recommonded don't use the iconic prov
 ###Section 1.7: Installing Android Studio SDK 
 * Setup Video - [http://learn.ionicframework.com/videos/windows-android/](http://learn.ionicframework.com/videos/windows-android/)
 * Android Studio SDK (REQUIRED) - [https://developer.android.com](https://developer.android.com)
-* modify the Android Studio  file 'AndroidManifest.xml' to default to a Android OS
-
-	$ The 'AndroidManifest.xml' can befoud in your project. 
-	  example: c:\git\<projectName>\platforms\android\AndroidManifest.xml
-
-	$ modify your project.properties file in path c:\git\<projectName>\platforms\android\
-
-	$ name\="android-minSdkVersion" value\="8" //android 2.2
-	
-	$ name\="android-minSdkVersion" value\="15" //android 4.0.1
-    
+* modify the Android Studio  file 'AndroidManifest.xml' to default compile to a Android OS version
     
 * Updated Windows Enviroment setting PATH to include the following adb.exe file
 	
@@ -126,10 +116,16 @@ You can use several andriod emulators. But recommonded don't use the iconic prov
 
 
 
-###Section 1.8a: Installing Ionic Android and iOS Emulation support
+###Section 1.8a: Installing Ionic Android and iOS Platform support
 
 	$ ionic platform add android
 	$ ionic platform add ios
+	
+	$ Modify the config.xml (cordova file)  c:\git\<projectName>\config.xml with the lowest android-minSDKVersion: 
+	$ modify name="android-minSdkVersion" value="15"	
+
+	$ modify your project.properties file in path c:\git\<projectName>\platforms\android\project.properties
+	$ modify target=android-15
 
 ###Section 1.8b: Installing Ionic Android and iOS Emulation support
 

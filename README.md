@@ -99,15 +99,24 @@ You can use several andriod emulators. But recommonded don't use the iconic prov
 
 * GenyMotion Install Video - [https://egghead.io/lessons/angularjs-install-the-genymotion-android-emulator-for-ionic](https://egghead.io/lessons/angularjs-install-the-genymotion-android-emulator-for-ionic)
 * GenyMotion(free for peronsal) - [https://www.genymotion.com](https://wwww.genymotion.com)
-* Android SDK (REQUIRED) - [https://developer.android.com](https://developer.android.com)
 
-###Section 1.7a: Installing Ionic Android and iOS Emulation support
+###Section 1.7: Installing Android Studio SDK 
+* Android Studio SDK (REQUIRED) - [https://developer.android.com](https://developer.android.com)
+* modify the Android Studio  file 'AndroidManifest.xml' to default to a Android OS
+    <preference name="android-minSdkVersion" value="8"> //android 2.2
+    <preference name="android-targetSdkVersion" value="15"> //android 4.0
+    
+* Updated Windows Enviroment setting PATH to include the following adb.exe file
+    C:\Users\<aName>\AppData\Local\Android\sdk1\platform-tools
+
+
+
+###Section 1.8a: Installing Ionic Android and iOS Emulation support
 
 	$ ionic platform add android
 	$ ionic platform add ios
 
-
-###Section 1.7b: Installing Ionic Android and iOS Emulation support
+###Section 1.8b: Installing Ionic Android and iOS Emulation support
 
 	$ ionic run android
 	$ ionic run ios

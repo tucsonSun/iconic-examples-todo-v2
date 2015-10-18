@@ -1,16 +1,20 @@
-<ion-view view-title="{{activeProject.title}} - Tasks">
+<ion-view view-title="Tasks">
     <ion-nav-buttons side="right">
-        <button class="button icon-left button-balanced ion-plus" ng-click="newTask()">&nbsp;Add</button>&nbsp;
+        <button class="button icon-left button-positive ion-plus" ng-click="addTask()"></button>&nbsp;
         <button class="button icon-left button-dark ion-funnel" ng-click="toggleShowReorder()">&nbsp;Reorder</button>&nbsp;
-        <button class="button icon-right button-assertive ion-trash-a" ng-click="toggleShowDelete()">&nbsp;Delete&nbsp;</button>&nbsp;
+        <button class="button icon-right button-assertive ion-trash-a" ng-click="toggleShowDelete()"></button>&nbsp;
         <!-- <button class="button button-icon icon ion-minus-circled" ng-click="toggleShowDelete()"></button> -->
     </ion-nav-buttons>
     <ion-content class="padding">
+        <!-- Empty List Message -->
+        <div ng-if="activeProject.tasks.length === 0">
+            <h1>Click <button class="button icon-center button-positive ion-plus" ng-click="addTask()"></button> to add tasks to project '{{activeProject.title}}'.</h1>
+        </div>
         <!-- List to thru tasks -->
         <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="true">
             <ion-item ng-repeat="task in activeProject.tasks" class="item-thumbnail-left">
                 <img ng-src="{{task.img}}">
-                <h2>{{task.title}}</h2>
+                <h2>{{activeProject.title}} - {{task.title}}</h2>
                 <p>{{task.isCompleted}}</p>
                 <p>{{task.description}}</p>
                 <ion-option-button class="button-positive" ng-click="emailTask(task)">
@@ -19,7 +23,7 @@
                 <ion-option-button class="button-info" ng-click="editTask(task)">
                     Edit
                 </ion-option-button>
-                <ion-delete-button class="ion-minus-circled" ng-click="deleteTask(task)"></ion-delete-button>
+                <ion-delete-button class="ion-trash-a" ng-click="deleteTask(task)"></ion-delete-button>
                 <ion-reorder-button class="ion-funnel" on-reorder="reorderTask(task, $fromIndex, $toIndex)"></ion-reorder-button>
             </ion-item>
         </ion-list>

@@ -27,18 +27,18 @@
 		};
 
 		/**
-		 * Method will open a modal for new task
+		 * Method will open a modal for add task
 		 */
-		$scope.newTask = function() {
+		$scope.addTask = function() {
 			//Clear the ngModel in the modal first
 			$scope.task = {};
 			$scope.taskModal.show();
 		};
 
 		/**
-		 * Method will close a modal for new task
+		 * Method will close a modal for add task
 		 */
-		$scope.closeNewTask = function() {
+		$scope.closeAddTaskModal = function() {
 			$scope.taskModal.hide();
 		};
 

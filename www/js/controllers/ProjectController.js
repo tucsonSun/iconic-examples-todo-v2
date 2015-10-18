@@ -17,10 +17,20 @@
 			scope: $scope,
 		});
 
-		$scope.addProjectWithModal = function() {
+		/**
+		 * Method will open a modal for add project
+		 */
+		$scope.addProject = function() {
 			//Clear the ngModel in the modal first
 			$scope.project = {};
 			$scope.projectModal.show();
+		};
+
+		/**
+		 * Method will close a modal for add project
+		 */
+		$scope.closeAddProjectModal = function() {
+			$scope.projectModal.hide();
 		};
 
 		$scope.projectModalTitle = function() {
@@ -36,11 +46,6 @@
 			$scope.project = project;
 			$scope.projectModal.show();
 		};
-
-		$scope.closeNewProject = function() {
-			$scope.projectModal.hide();
-		};
-
 
 		$scope.newProject = function(project) {
 			var projectTitle = project.title;

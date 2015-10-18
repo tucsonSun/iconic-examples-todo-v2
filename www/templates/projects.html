@@ -1,13 +1,17 @@
 <ion-view view-title="Projects">
     <ion-nav-buttons side="right">
 
-        <button class="button icon-left button-balanced ion-plus" ng-click="addProjectWithModal()">&nbsp;Add</button>&nbsp;
+        <button class="button icon-left button-positive ion-plus" ng-click="addProject()"></button>&nbsp;
         <button class="button icon-left button-dark ion-funnel" ng-click="toggleShowReorder()">&nbsp;Reorder</button>&nbsp;
-        <button class="button icon-right button-assertive ion-trash-a" ng-click="toggleShowDelete()">&nbsp;Delete&nbsp;</button>&nbsp;
+        <button class="button icon-right button-assertive ion-trash-a" ng-click="toggleShowDelete()"></button>&nbsp;
         
         <!-- <button class="button button-icon icon ion-minus-circled" ng-click="toggleShowDelete()"></button> -->
     </ion-nav-buttons>
     <ion-content class="padding">
+        <!-- Empty List Message -->
+        <div ng-if="projects.length === 0">
+            <h1>Click <button class="button icon-center button-positive ion-plus" ng-click="addProject()"></button> to add projects....</h1>
+        </div>
         <!-- List to thru projects -->
         <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="true">
             <ion-item ng-repeat="project in projects" class="item-thumbnail-left" ng-click="selectProject(project)">
@@ -18,7 +22,7 @@
                 <ion-option-button class="button-info" ng-click="editProject(project)">
                     Edit
                 </ion-option-button>
-                <ion-delete-button class="ion-minus-circled" ng-click="deleteProject(project)"></ion-delete-button>
+                <ion-delete-button class="ion-trash-a" ng-click="deleteProject(project)"></ion-delete-button>
                 <ion-reorder-button class="ion-funnel" on-reorder="reorderProject(project, $fromIndex, $toIndex)"></ion-reorder-button>
             </ion-item>
         </ion-list>

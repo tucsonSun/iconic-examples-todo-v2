@@ -103,11 +103,12 @@ You can use several andriod emulators. But recommonded don't use the iconic prov
 ###Section 1.7: Installing Android Studio SDK 
 * Android Studio SDK (REQUIRED) - [https://developer.android.com](https://developer.android.com)
 * modify the Android Studio  file 'AndroidManifest.xml' to default to a Android OS
-	$ preference name="android-minSdkVersion" value="8" //android 2.2
-	$ preference name="android-targetSdkVersion" value="15" //android 4.0
+
+	$ name\="android-minSdkVersion" value\="8" //android 2.2
+	$ name\="android-minSdkVersion" value\="15" //android 4.0.1
     
 * Updated Windows Enviroment setting PATH to include the following adb.exe file
-	$ PATH=OTHER STUFF;C:\Users\<aName>\AppData\Local\Android\sdk1\platform-tools
+	$ PATH\=OTHER STUFF;C:\Users\<aName>\AppData\Local\Android\sdk1\platform-tools
 
 
 

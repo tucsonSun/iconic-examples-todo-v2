@@ -108,8 +108,7 @@ You can use several andriod emulators. But recommonded don't use the iconic prov
 ###Section 1.7: Installing Android Studio SDK 
 * Setup Video - [http://learn.ionicframework.com/videos/windows-android/](http://learn.ionicframework.com/videos/windows-android/)
 * Android Studio SDK (REQUIRED) - [https://developer.android.com](https://developer.android.com)
-* modify the Android Studio  file 'AndroidManifest.xml' to default compile to a Android OS version
-    
+
 * Updated Windows Enviroment setting PATH to include the following adb.exe file
 	
 	$ PATH\=OTHER STUFF; C:\Users\<aName>\AppData\Local\Android\sdk\platform-tools
@@ -121,6 +120,7 @@ You can use several andriod emulators. But recommonded don't use the iconic prov
 	$ ionic platform add android
 	$ ionic platform add ios
 	
+	###For Android
 	$ Modify the config.xml (cordova file)  c:\git\<projectName>\config.xml with the lowest android-minSDKVersion: 
 	$ modify name="android-minSdkVersion" value="15"	
 

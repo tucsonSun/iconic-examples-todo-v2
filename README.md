@@ -121,7 +121,7 @@ You can use several andriod emulators. But recommonded don't use the iconic prov
     
 * Updated Windows Enviroment setting PATH to include the following adb.exe file
 	
-	$ PATH\=OTHER STUFF; C:\Users\<aName>\AppData\Local\Android\sdk1\platform-tools
+	$ PATH\=OTHER STUFF; C:\Users\<aName>\AppData\Local\Android\sdk\platform-tools
 
 
 

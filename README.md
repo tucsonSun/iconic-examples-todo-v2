@@ -109,6 +109,9 @@ You can use several andriod emulators. But recommonded don't use the iconic prov
 * Android Studio SDK (REQUIRED) - [https://developer.android.com](https://developer.android.com)
 * modify the Android Studio  file 'AndroidManifest.xml' to default to a Android OS
 
+	$ The 'AndroidManifest.xml' can befoud in your project. 
+	  example: c:\git\<projectName>\todoApp\platforms\android\AndroidManifest.xml
+	
 	$ name\="android-minSdkVersion" value\="8" //android 2.2
 	
 	$ name\="android-minSdkVersion" value\="15" //android 4.0.1

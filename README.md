@@ -105,9 +105,13 @@ You can use several andriod emulators. But recommonded don't use the iconic prov
 * modify the Android Studio  file 'AndroidManifest.xml' to default to a Android OS
 
 	$ name\="android-minSdkVersion" value\="8" //android 2.2
+	
 	$ name\="android-minSdkVersion" value\="15" //android 4.0.1
     
+    
 * Updated Windows Enviroment setting PATH to include the following adb.exe file
+* 
+
 	$ PATH\=OTHER STUFF;C:\Users\<aName>\AppData\Local\Android\sdk1\platform-tools
 
 

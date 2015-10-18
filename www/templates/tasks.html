@@ -12,13 +12,14 @@
         </div>
         <!-- List to thru tasks -->
         <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="true">
-            <ion-item ng-repeat="task in activeProject.tasks" class="item-thumbnail-left">
+            <ion-item ng-repeat="task in activeProject.tasks" class="item-thumbnail-left" ng-click="toggleTaskIsComplete(task)">
                 <img ng-src="{{task.img}}">
                 <h2>{{activeProject.title}} - {{task.title}}</h2>
-                <p>{{task.isCompleted}}</p>
                 <p>{{task.description}}</p>
-                <ion-option-button class="button-assertive" ng-click="toggleTaskIsComplete(task)">
-                    {{isCompletedLabel()}}
+
+                <!-- add the class 'text-success' if the variable 'awesome' is true -->
+                <ion-option-button ng-class="{ 'button-assertive': !task.isCompleted, 'button-balanced': task.isCompleted }" ng-click="toggleTaskIsComplete(task)">
+                    {{isCompletedLabel(task)}}
                 </ion-option-button>
                 <ion-option-button class="button-positive" ng-click="emailTask(task)">
                     Email

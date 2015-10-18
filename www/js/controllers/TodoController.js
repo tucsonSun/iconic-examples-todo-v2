@@ -87,9 +87,9 @@
 		 */
 		$scope.isCompletedLabel = function(task) {
 			if (task && task.title && task.isCompleted) {
-				return "Complete";
+				return "Done!";
 			} else {
-				return "Is Complete?";
+				return "Done?";
 			}
 		};
 
@@ -97,7 +97,9 @@
 		 * Method will toggle isCompleted flag
 		 */
 		$scope.toggleTaskIsComplete = function(task) {
+			var before = $scope.isCompletedLabel();
 			Projects.toggleTaskIsComplete(task);
+			console.log("before="+before+"   after="+$scope.isCompletedLabel());
 		};
 
 

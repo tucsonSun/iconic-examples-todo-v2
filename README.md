@@ -124,6 +124,7 @@ You can use several andriod emulators. But recommonded don't use the iconic prov
 	$ Modify the config.xml (cordova file)  c:\git\<projectName>\config.xml with the lowest android-minSDKVersion: 
 	$ modify name="android-minSdkVersion" value="15"	
 
+	###For Android
 	$ modify your project.properties file in path c:\git\<projectName>\platforms\android\project.properties
 	$ modify target=android-15
 

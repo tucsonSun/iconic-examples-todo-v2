@@ -84,6 +84,8 @@ To build an application for the Ubuntu platform, the following extra packages ar
 
 		$ sudo apt-get install cmake debhelper libx11-dev libicu-dev pkg-config qtbase5-dev qtchooser qtdeclarative5-dev qtfeedback5-dev qtlocation5-dev qtmultimedia5-dev qtpim5-dev qtsensors5-dev qtsystems5-dev
 
+
+
 ###Section 1.5: Installing a Text Editor
 
 You can use any text editor to developer your ionic project.  I personally am using Visual Studio Code right now but any text editor will do.
@@ -93,12 +95,15 @@ You can use any text editor to developer your ionic project.  I personally am us
 * Webstorm (paid)  - [https://www.jetbrains.com/webstorm](https://www.jetbrains.com/webstorm)
 * Sublime Text (paid) - [http://www.sublimetext.com](http://www.sublimetext.com) 
 
+
+
 ###Section 1.6: Installing Andriod Emulator Genymotion
 
 You can use several andriod emulators. But recommonded don't use the iconic provided emulator. 
 
 * GenyMotion Install Video - [https://egghead.io/lessons/angularjs-install-the-genymotion-android-emulator-for-ionic](https://egghead.io/lessons/angularjs-install-the-genymotion-android-emulator-for-ionic)
 * GenyMotion(free for peronsal) - [https://www.genymotion.com](https://wwww.genymotion.com)
+
 
 ###Section 1.7: Installing Android Studio SDK 
 * Android Studio SDK (REQUIRED) - [https://developer.android.com](https://developer.android.com)
@@ -110,9 +115,8 @@ You can use several andriod emulators. But recommonded don't use the iconic prov
     
     
 * Updated Windows Enviroment setting PATH to include the following adb.exe file
-* 
-
-	$ PATH\=OTHER STUFF;C:\Users\<aName>\AppData\Local\Android\sdk1\platform-tools
+	
+	$ PATH\=OTHER STUFF; C:\Users\<aName>\AppData\Local\Android\sdk1\platform-tools
 
 
 

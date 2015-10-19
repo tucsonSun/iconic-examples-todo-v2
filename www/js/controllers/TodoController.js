@@ -2,13 +2,18 @@
 		.module('todoApp')
 		.controller('ToDoController', ToDoController);
 
-	ToDoController.$inject = ['$scope', 'Projects', '$ionicModal', '$ionicSideMenuDelegate'];
+	ToDoController.$inject = ['$scope', '$state', 'Projects', '$ionicModal', '$ionicSideMenuDelegate'];
 
-	function ToDoController($scope, Projects, $ionicModal, $ionicSideMenuDelegate) {
+	function ToDoController($scope, $state, Projects, $ionicModal, $ionicSideMenuDelegate) {
 		//initialize
 		$scope.activeProject = Projects.getActiveProject();
 		$scope.shouldShowDelete = false;
 		$scope.shouldShowReorder = false;
+
+		//if activeProject doesnt exist then go to home page
+		if (!$scope.activeProject) {
+			$state.go('app.projects');
+		}
 
 		// Create our modal
 		$ionicModal.fromTemplateUrl('templates/new-task.html', function(modal) {

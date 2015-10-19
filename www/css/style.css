@@ -1,11 +1,7 @@
 /* Empty. Add your own CSS if you like */
 
 
-/* Empty. Add your own CSS if you like */
-
-
-
-
+/* CSS for a completed task */
 .is-item-complete div.item-content {
     background-color: lightgreen;
     text-decoration: line-through;

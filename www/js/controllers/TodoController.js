@@ -97,9 +97,7 @@
 		 * Method will toggle isCompleted flag
 		 */
 		$scope.toggleTaskIsComplete = function(task) {
-			var before = $scope.isCompletedLabel();
 			Projects.toggleTaskIsComplete(task);
-			console.log("before="+before+"   after="+$scope.isCompletedLabel());
 		};
 
 

@@ -1,1 +1,12 @@
 /* Empty. Add your own CSS if you like */
+
+
+/* Empty. Add your own CSS if you like */
+
+
+
+
+.is-item-complete div.item-content {
+    background-color: lightgreen;
+    text-decoration: line-through;
+}

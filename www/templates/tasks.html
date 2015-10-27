@@ -18,7 +18,7 @@
                 <p>{{task.description}}</p>
 
                 <!-- add the class 'text-success' if the variable 'awesome' is true -->
-                <ion-option-button ng-class="{ 'button-assertive': !task.isCompleted, 'button-balanced': task.isCompleted }" ng-click="toggleTaskIsComplete(task)">
+                <ion-option-button ng-class="{ 'button-calm': !task.isCompleted, 'button-balanced': task.isCompleted }" ng-click="toggleTaskIsComplete(task)">
                     {{isCompletedLabel(task)}}
                 </ion-option-button>
                 <ion-option-button class="button-positive" ng-click="emailTask(task)">

@@ -133,6 +133,12 @@ You can use several andriod emulators. But recommonded don't use the iconic prov
 	$ ionic run android
 	$ ionic run ios
 
+
+###Section 1.9: Modify Project to use sass
+* Read this - [http://ionicframework.com/docs/cli/sass.html](http://ionicframework.com/docs/cli/sass.html)
+
+	$ $ ionic setup sass
+
 ##------------------------------------------------------
 
 ##Section 2: Creating the Project

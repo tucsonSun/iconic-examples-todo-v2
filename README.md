@@ -141,7 +141,7 @@ You can use several andriod emulators. But recommonded don't use the iconic prov
 
 ##------------------------------------------------------
 
-##Section 2: Creating the Project
+##Section 2: Run the Project in WEB Browser
 
 In this section we will be creating the initial ionic project.
  
@@ -160,7 +160,9 @@ In this section we will be creating the initial ionic project.
 		![Ionic Start Output](images/IonicStart.png)
 1. Running our todoApp
 
-		$ cd todoApp && ionic serve 
+		$ cd todoApp
+		$ ionic serve 
+		
 
 1. You should see a web browser open and the page will look like the following
 		![Ionic Serve Output](images/IonicServeAfterProjectCreate.png)

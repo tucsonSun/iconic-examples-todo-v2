@@ -72,6 +72,16 @@
 		};
 
 		/**
+		 * Method will update and save the task
+		 */
+		$scope.updateTask = function(task) {
+			//push new task into project
+			Projects.updateTask($scope.activeProject, task);
+			//modal hide
+			$scope.taskModal.hide();
+		};
+
+		/**
 		 * Method will delete the task
 		 */
 		$scope.deleteTask = function(task) {

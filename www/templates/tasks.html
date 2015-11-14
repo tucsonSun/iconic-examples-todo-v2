@@ -13,8 +13,9 @@
         <!-- List to thru tasks -->
         <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="true">
             <ion-item ng-repeat="task in activeProject.tasks" class="item-thumbnail-left" ng-click="toggleTaskIsComplete(task)" ng-class="{'is-item-complete': task.isCompleted}">
-                <img ng-src="{{task.img}}">
-                <h2>{{activeProject.title}} - {{task.title}}</h2>
+                <!-- <img ng-src="{{task.img}}" style="background-color:lightgray;" class="ion-sad-outline"  ng-if="task.isCompleted"> -->
+                <i class="ion-happy-outline" style="font-size: 36px; float:right;" ng-if="task.isCompleted"></i>
+                <h2>{{task.title}}</h2>
                 <p>{{task.description}}</p>
 
                 <!-- add the class 'text-success' if the variable 'awesome' is true -->

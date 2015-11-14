@@ -9,14 +9,26 @@
   <!-- Modal content area -->
   <ion-content>
 
-    <form ng-submit="newTask(task)">
+    <form ng-submit="newTask(task)" ng-if="!task.id">
       <div class="list">
         <label class="item item-input">
           <input type="text" placeholder="What task do you need to do?" ng-model="task.title">
         </label>
       </div>
       <div class="padding">
-        <button type="submit" class="button button-block button-positive">Ok</button>
+        <button type="submit" class="button button-block button-positive">Create Task</button>
+      </div>
+    </form>
+
+
+    <form ng-submit="updateTask(task)" ng-if="task.id">
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="What task do you need to do?" ng-model="task.title">
+        </label>
+      </div>
+      <div class="padding">
+        <button type="submit" class="button button-block button-positive">Update Task</button>
       </div>
     </form>
 

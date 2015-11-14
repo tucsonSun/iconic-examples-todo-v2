@@ -9,8 +9,10 @@
 			all: all,
 			save: save,
 			newProject: newProject,
+			updateProject: updateProject,
 			deleteProject: deleteProject,
 			newTask: newTask,
+			updateTask: updateTask,
 			deleteTask: deleteTask,
 			getLastActiveIndex: getLastActiveIndex,
 			setLastActiveIndex: setLastActiveIndex,
@@ -80,6 +82,14 @@
 			};
 		}
 
+		function updateProject(project) {
+			var projIndex = this.getIndexOfProject(project);
+			globalProjects[projIndex] = project;
+
+			//save the projectList
+			this.save(globalProjects);
+		}
+
 		function getLastProjectInList() {
 			console.log("Projects.getLastProjectInList");
 			var projects = all();
@@ -128,6 +138,15 @@
 			this.save(globalProjects);
 		}
 
+		function updateTask(project, task) {
+			var projIndex = this.getIndexOfProject(project);
+			var globalTasks = globalProjects[projIndex].tasks;
+			var taskIndex = getIndexOfTask(project, task);
+			globalTasks[taskIndex] = task;
+
+			//save the projectList
+			this.save(globalProjects);
+		}
 
 		function getUniqueId(project) {
 			if (typeof project.prototype.uniqueId == "undefined") {

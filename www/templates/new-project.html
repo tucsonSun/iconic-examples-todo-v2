@@ -6,7 +6,7 @@
     </ion-header-bar>
     <!-- Modal content area -->
     <ion-content>
-        <form ng-submit="newProject(project)">
+        <form ng-submit="newProject(project)" ng-if="!project.id">
             <div class="list">
                 <label class="item item-input">
                     <input type="text" placeholder="What project do you need to do?" ng-model="project.title">
@@ -14,6 +14,17 @@
             </div>
             <div class="padding">
                 <button type="submit" class="button button-block button-positive">Create Project</button>
+            </div>
+        </form>
+
+        <form ng-submit="updateProject(project)" ng-if="project.id">
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" placeholder="What project do you need to do?" ng-model="project.title">
+                </label>
+            </div>
+            <div class="padding">
+                <button type="submit" class="button button-block button-positive">Update Project</button>
             </div>
         </form>
     </ion-content>

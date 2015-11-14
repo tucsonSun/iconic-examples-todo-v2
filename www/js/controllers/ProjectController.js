@@ -47,6 +47,15 @@
 			$scope.projectModal.show();
 		};
 
+		/**
+		 * Method will update and save the project
+		 */
+		$scope.updateProject = function(project) {
+			Projects.updateProject(project);
+			//modal hide
+			$scope.projectModal.hide();
+		};
+
 		$scope.newProject = function(project) {
 			var projectTitle = project.title;
 			if (projectTitle) {
